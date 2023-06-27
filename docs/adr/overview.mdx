@@ -1,0 +1,47 @@
+import { Mermaid } from "mdx-mermaid/Mermaid";
+
+this is just a mermaid demo
+====
+
+
+<Mermaid chart={`C4Component
+    title Nebenan FE
+    Container_Boundary(DE-main, "nebenan.de") {
+    Container(fe-main, "nebenan.de")
+    Rel(fe-main, design-system, "uses")
+    Rel(fe-main, shared-services, "uses")
+    Container(fe-main-comps, "nebenan.de Components", "maybe specific organisms?")
+    Rel(fe-main, fe-main-comps, "uses")
+    Container(main-services, "Shared Services", "")
+    Rel(fe-main, main-services, "uses")
+    Rel(main-services, shared-services, "uses")
+
+
+
+}
+
+    Container_Boundary(DE-gew, "gewerbe.nebenan.de") {
+
+    Container(fe-gew, "gewerbe.nebenan.de")
+    Rel(fe-gew, design-system, "uses")
+    Container(gew-services, "Gewerbe Services", "")
+    Rel(fe-gew, gew-services, "uses")
+    Rel(gew-services, shared-services, "uses")
+
+}
+
+    Container_Boundary(shared, "shared") {
+
+    Container(design-system, "Component Library", "atoms, moleules, shared organisms")
+    Container(shared-services, "Shared Services", "e.g. login")
+
+}
+    Container_Boundary(demo, "demo") {
+
+    Container(demo-frontend, "Demo next.js")
+    Rel(demo-frontend, design-system, "uses")
+    Rel(demo-frontend, shared-services, "uses")
+
+}`}>
+
+</Mermaid>
