@@ -9,9 +9,119 @@ Technical Story: [description | ticket/issue URL]
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+Code across all Libraries and Applications should be consistent. This is especially important for the UI-Library, which is used by all Applications.
+### UI Library
+UI-Library will be split into Components and Blocks. Components are simple and compound components.
+Blocks are a combination of Components and only used as a template for Applications.
+### Applications
 
-## Decision Drivers 
+Applications should be split into different business domains (e.g ) in order to be able to scale the development team.
+Each business domain should have its own folder in the Application.
+Each business domain should have its own routes file.
+Each business domain should have its own pages folder.
+Each business domain might have its own components folder.
+
+
+
+### Definitions
+
+#### Component (simple and compound components)
+A Component is a single Atom in the UI-Library. Atoms are defined by Design.
+Components always export a single Component. All Sub-Components should be accessible via the main Component.
+
+#### Block
+
+A Block is a combination of (complex) Components. Blocks are just examples for using components in applications.
+Blocks can't be imported in applications as they are basically only templates
+
+### Folder Structure
+```
+@goodhood/ui
+/
+/src
+/src/components
+
+/src/components/button
+/src/components/button/index.ts
+    export { default as Button } from './button';
+/src/components/button/button.tsx
+
+/src/components/accordion/
+/src/components/accordion/index.ts
+    export { default as Accordion } from './accordion';
+    Accordion
+    Accordion.Item
+    Accordion.Title
+    Accordion.Content
+/src/components/accordion/accordion.tsx
+/src/components/accordion/accordion-item.tsx
+/src/components/accordion/accordion-title.tsx
+/src/components/accordion/accordion-content.tsx
+
+/src/blocks
+/src/blocks/post
+/src/blocks/post/index.ts
+    export { default as Post } from './post';
+/src/blocks/post/post.tsx
+Card
+    Title
+    Content
+    Reaction
+
+```
+Service Monorepo
+```
+@goodhood/tracking
+/
+/tracking/src/
+/tracking/src/index.ts
+/tracking/src/analytics.ts
+
+@goodhood/api
+/api/src/
+/api/src/index.ts
+/api/src/groups.ts
+/api/src/feed.ts
+/api/src/settings.ts
+
+@goodhood/types
+/types/src/
+/types/src/groups.d.ts
+/types/src/feed.d.ts
+/types/src/settings.d.ts
+
+```
+
+Application:
+```
+@nebenan/application
+/
+/src/
+/src/client.ts
+/src/server.ts
+/src/routes.ts
+/src/groups
+/src/groups/index.ts
+/src/groups/routes.ts
+/src/groups/pages
+/src/groups/pages/feed
+/src/groups/pages/feed/components/index.ts
+/src/groups/pages/feed/components/group-post.ts
+/src/groups/pages/feed/index.ts
+/src/groups/pages/feed/feed.tsx -> groups/feed
+import { Feed } from '@goodhood/api';
+import { FeedItem } from '@goodhood/types';
+Feed.getFeedItem():Request<FeedItem>
+/src/groups/pages/feed/feed-item.tsx -> groups/feed/:id
+/src/groups/components/index.ts
+/src/groups/components/invite.ts
+/src/business/
+/src/buisness/index.ts
+/src/buisness/pages/
+/src/buisness/pages/filialisten
+/src/buisness/pages/filialisten/index.ts
+```
+## Decision Drivers
 
 * [driver 1, e.g., a force, facing concern, …]
 * [driver 2, e.g., a force, facing concern, …]
@@ -38,34 +148,6 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 * [e.g., compromising quality attribute, follow-up decisions required, …]
 * …
 
-## Pros and Cons of the Options 
-
-### [option 1]
-
-[example | description | pointer to more information | …] 
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … 
-
-### [option 2]
-
-[example | description | pointer to more information | …] 
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … 
-
-### [option 3]
-
-[example | description | pointer to more information | …] 
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … 
 
 ## Links 
 
