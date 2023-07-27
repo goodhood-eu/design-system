@@ -1,0 +1,38 @@
+.autocomplete {
+    position: relative;
+    height: 140px;
+    width: 480px;
+    padding: 24px;  
+}
+
+.autocomplete div {
+    width: 100%;
+    display: flex;
+}
+
+.list {
+    padding: 0 32px;
+    margin: 0;
+    background: #f4f4f6;
+    margin-top: 8px;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.list li {
+    border-bottom: 1px solid #2016494d;
+    font-size: 1.125rem;
+    align-items: center;
+    color: #201649;
+    display: grid;
+    font-size: 16px;
+    font-weight:400;
+    padding: 0.8rem 0;
+    text-decoration: none;
+}
+
+.list li:hover {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}

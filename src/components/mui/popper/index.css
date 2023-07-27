@@ -1,0 +1,8 @@
+.popper {
+    max-width: 100%;
+    background: #c4c3c300;
+    left: 0;
+    min-width: 480px;
+    max-width: 480px;
+    /* transform: translate3d(40px, 60px, 0px) !important; */
+}
