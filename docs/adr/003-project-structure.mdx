@@ -44,6 +44,9 @@ Blocks can't be imported in applications as they are basically only templates
 /src/components/button
 /src/components/button/index.ts
     export { default as Button } from './button';
+/src/components/button/button.stories.ts
+/src/components/button/button.test.ts
+    -> depends on the testing framework
 /src/components/button/button.tsx
 
 /src/components/accordion/
@@ -63,13 +66,15 @@ Blocks can't be imported in applications as they are basically only templates
 /src/blocks/post/index.ts
     export { default as Post } from './post';
 /src/blocks/post/post.tsx
+/src/blocks/post/post.stories.tsx
+
 Card
     Title
     Content
     Reaction
 
 ```
-Service Monorepo
+Service Monorepo (no UI stuff)
 ```
 @goodhood/tracking
 /
@@ -94,7 +99,7 @@ Service Monorepo
 
 Application:
 ```
-@nebenan/application
+@goodhood/nebenan-web
 /
 /src/
 /src/client.ts
@@ -116,10 +121,10 @@ Feed.getFeedItem():Request<FeedItem>
 /src/groups/components/index.ts
 /src/groups/components/invite.ts
 /src/business/
-/src/buisness/index.ts
-/src/buisness/pages/
-/src/buisness/pages/filialisten
-/src/buisness/pages/filialisten/index.ts
+/src/business/index.ts
+/src/business/pages/
+/src/business/pages/filialisten
+/src/business/pages/filialisten/index.ts
 ```
 ## Decision Drivers
 

@@ -1,0 +1,82 @@
+import { Mermaid } from "mdx-mermaid/Mermaid";
+
+nebenan Frontend Roadmap
+====
+## Overview
+
+These desicions should be reviewed regularly and are open for discussion.
+
+## Epics
+
+* Documentation & Guidelines
+    * Document components and design principles.
+* Component Library Development & New Features Integration (Design System)
+  * Identify reusable components in old codebases.
+  * Prioritize and develop components needed for new features / change requests.
+  * Gradually develop other components for the design system.
+
+* Service Library (@goodhood) Development
+    * Use goodhood-eu/goodhood as a starting point
+    * Extract, refactor, and document essential services (e.g., tracking, API) from the old codebase.
+    * Define and create types for the services to ensure type safety and consistency.
+* Frontend Automation
+    * Automated Deployments
+        * deploy previews
+        * deploy staging
+        * deploy production
+    * Automated Testing
+        * migrate tests to applications and libraries
+        * implement automated testing
+        * enforce succeeding tests on PRs
+    * Automated Code Analysis
+        * implement sonarqube
+        * enforce code quality on PRs
+
+## Project / Package Visibility
+
+* Everything should be private by default
+* All repos should be in the good-hood-gmbh org
+* the goodhood repo (service library) contains all shared service / helper / type / util packages
+* @goodhood/nebenan-web should be the main frontend in the future
+* @goodhood/ui, @goodhood/services are not included in the monorepo since they are used in the old and new applications during the transition phase
+
+
+github org: good-hood-gmbh
+npm org: @goodhood
+
+### @goodhood/nebenan-web
+Domains (open for discussion)
+* private
+* feed
+* marketplace
+* user
+* groups
+* events
+* business (should it be merged, seperate repo?, talk to everyone about it)
+  * create biz post
+  * /feed -> @goodhood/nebenan-web/feed/index.ts
+
+
+### @goodhood/goodhood -> service lib
+
+### @goodhood/ui -> component lib
+
+### @goodhood/design-tokens -> design tokens
+
+## Whats needed for starting implementation in comp-lib
+
+* [x] Project Structure
+* [x] Base Components
+* [x] Styling Framework
+* [/] Conventions
+* [x] Design Tokens
+* [/] Testing Framework
+
+
+###  nice to have
+* [/] conversational commits
+* [ ] automated testing
+* [ ] automated deployment
+
+
+
