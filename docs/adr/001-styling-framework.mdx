@@ -1,0 +1,147 @@
+# ADR-001: Styling Framework
+
+* Status: proposed
+* Deciders: @jude, @fweinrich
+* Date: 23.06.2023
+
+Technical Story: [description | ticket/issue URL]
+
+## Context and Problem Statement
+
+[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+The goal is to find a styling solution that works both well for developers who are new to react but also works in the long run.
+## Decision Drivers
+
+* [driver 1, e.g., a force, facing concern, …]
+* [driver 2, e.g., a force, facing concern, …]
+*
+
+
+## Considered Options
+
+* CSS Modules
+* SCSS Modules
+* Styled Components (js in css)
+* Emotion (js in css)
+
+## Decision Outcome
+
+Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+
+## Comparison
+
+<table>
+    <thead>
+    <tr>
+    <th>Framework</th>
+    <th>Pro</th>
+    <th>Con</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>CSS Modules</td>
+        <td>2</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>SCSS Modules</td>
+        <td>3</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Styled Components</td>
+        <td>2</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Emotion</td>
+        <td>2</td>
+        <td>4</td>
+    </tr>
+    </tbody>
+</table>
+### Positive Consequences 
+
+* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
+* …
+
+### Negative Consequences
+
+* [e.g., compromising quality attribute, follow-up decisions required, …]
+* …
+
+## Pros and Cons of the Options
+
+### CSS Modules
+
+[[Github Repo](https://github.com/gajus/react-css-modules)  | description | pointer to more information | …]
+
+* Good, because CSS will never be deprecated
+* Good, because developers are familiar to it
+* Bad, because dynamic styles are only possible by changing class-names
+* Bad, Only standard CSS available
+* Bad, theming is not easy to implement
+* Bad, because there is a custom*ish toolchain needed to compile the scss files
+
+
+#### Repo Stats
+
+* deprecated
+* native to react
+
+### SCSS Modules
+
+[example | description | pointer to more information | …]
+
+* Good, because Variables and Mixins can be used
+* Good, because developers are familiar to it
+* Good, because there is already SCSS code in the codebase
+* Bad, because dynamic styles are only possible by changing class-names
+* Bad, because there is a custom*ish toolchain needed to compile the scss files
+
+#### Repo Stats
+
+* deprecated (since its just css modules with a scss preprocessor)
+* native to react
+
+### Styled Components (js in css)
+
+[[Github Repo](https://github.com/styled-components/styled-components) | description | pointer to more information | …]
+
+* Good, because it's deeply integrated into react
+* Good, because it handles dynamic styles very well (props and stuff)
+* Bad, because it's tightly coupled to code
+* Bad, because it's not easy to use with other frameworks (e.g. Angular)
+* Bad, because there is a learning curve
+* *Bad, because there is a custom\*ish toolchain needed to do serverside rendering*
+
+#### Repo Stats
+
+* last change yesterday
+* 313 contributors
+* initial commit 2016
+
+### Emotion (js in css)
+
+[example | description | pointer to more information | …]
+
+* Good, because it's deeply integrated into react
+* Good, because it handles dynamic styles very well (props and stuff)
+* Bad, because it's tightly coupled to code
+* Bad, because it's not easy to use with other frameworks (e.g. Angular)
+* Bad, because there is a learning curve
+* *Bad, because there is a custom\*ish toolchain needed to do serverside rendering*
+
+#### Repo Stats
+
+* last week
+* 302 contributors
+* initial commit 2017
+
+
+
+
+## Links
+
+* [Link type] [Link to ADR]
